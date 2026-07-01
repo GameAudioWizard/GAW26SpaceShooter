@@ -1,0 +1,6 @@
+[gd_resource type="AudioStreamInteractive" format=3 uid="uid://s8b4mekenbvr"]
+
+[resource]
+clip_count = 1
+clip_0/name = &"asteroid1"
+clip_0/auto_advance = 0

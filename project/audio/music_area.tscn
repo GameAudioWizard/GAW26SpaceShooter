@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cr70ws0inyxt6"]
+
+[sub_resource type="GDScript" id="GDScript_hxkrc"]
+script/source = "class_name MusicArea
+extends Area2D
+
+signal send_music_clip(clip_name: String)  ## Emitted when a player enters the area, sending the music clip name
+@warning_ignore(\"unused_signal\")
+signal _disable_music_area
+@warning_ignore(\"unused_signal\")
+signal _enable_music_area
+@warning_ignore(\"unused_signal\")
+signal change_music(new_clip_name : String)
+
+@export var clip_name: String  ## The name of the music clip to play when entering this area
+@export var new_clip_name_to_send : String
+
+
+@export var is_boss : bool = false
+@export var is_enabled : bool = true
+@export var should_change_clip : bool = false
+@export var should_disable_areas: bool = false
+@export var should_enable_areas : bool = false
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is PlayerShip and clip_name != null and is_enabled:
+			send_music_clip.emit(clip_name)
+			handle_music_area_adjustments()
+
+
+func handle_music_area_adjustments()-> void:
+	if should_change_clip:
+		change_music.emit(new_clip_name_to_send)
+	if should_disable_areas:
+		_disable_music_area.emit()
+	if should_enable_areas:
+		_enable_music_area.emit()
+
+func set_clip_name(_new_clip_name : String) -> void:
+	clip_name = _new_clip_name
+
+func set_new_clip_name_to_send(_new_clip_name : String) -> void:
+	self.new_clip_name_to_send = _new_clip_name
+
+func set_enabled_on() -> void:
+	self.is_enabled = true
+
+func set_enabled_off() -> void:
+	print(\"setting enabled off\")
+	self.is_enabled = false
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rwsjf"]
+
+[node name="MusicArea" type="Area2D" unique_id=1280212312]
+process_mode = 3
+collision_layer = 256
+collision_mask = 8
+script = SubResource("GDScript_hxkrc")
+
+[node name="CollisionShape1" type="CollisionShape2D" parent="." unique_id=411812458]
+shape = SubResource("CircleShape2D_rwsjf")
+debug_color = Color(0.999134, 0.95923, 1.54018e-06, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
