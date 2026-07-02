@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsww2j4bmv25c"]
+[gd_scene load_steps=11 format=3 uid="uid://dsww2j4bmv25c"]
 
 [ext_resource type="PackedScene" uid="uid://bjne51x01i88h" path="res://ui/main_screen/main_screen.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://ui/menus/sounds/menu_sound_player.tscn" id="2"]
@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://c2tqk03snyo2y" path="res://ui/main_screen/gamepads/xbox_a_button.svg" id="4"]
 [ext_resource type="Texture2D" uid="uid://c0bavtgts8dwh" path="res://ui/main_screen/gamepads/playstation_cross_buttton.svg" id="5"]
 [ext_resource type="Texture2D" uid="uid://b01jiu5efjmmg" path="res://ui/main_screen/gamepads/nintendob_button.svg" id="6"]
-[ext_resource type="Script" path="res://ui/main_menu_texts.gd" id="7"]
-[ext_resource type="Script" path="res://ui/main_menu.gd" id="8"]
+[ext_resource type="Script" uid="uid://dy4yqpraj0ixx" path="res://ui/main_menu_texts.gd" id="7"]
+[ext_resource type="Script" uid="uid://doe74c3evdxg2" path="res://ui/main_menu.gd" id="8"]
 [ext_resource type="PackedScene" uid="uid://bv00wk2go2l6s" path="res://ui/screen_fader.tscn" id="9"]
+[ext_resource type="AudioStream" uid="uid://vst8jfly1rm2" path="res://audio/Coreys Title Screen Music.mp3" id="10_5klac"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -94,3 +95,8 @@ layer = 3
 duration_fade_out = 1.0
 
 [node name="MenuSoundPlayer" parent="." instance=ExtResource("2")]
+
+[node name="MUSMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_5klac")
+volume_db = -7.87
+autoplay = true

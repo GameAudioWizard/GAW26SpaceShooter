@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vst8jfly1rm2"
+path="res://.godot/imported/Coreys Title Screen Music.mp3-333c3493af0cf80866eda73b5b9f37aa.mp3str"
+
+[deps]
+
+source_file="res://audio/Coreys Title Screen Music.mp3"
+dest_files=["res://.godot/imported/Coreys Title Screen Music.mp3-333c3493af0cf80866eda73b5b9f37aa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

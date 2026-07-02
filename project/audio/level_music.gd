@@ -1,4 +1,4 @@
-class_name LevelMusic
+class_name LevelMusic1
 extends AudioStreamPlayer
 
 

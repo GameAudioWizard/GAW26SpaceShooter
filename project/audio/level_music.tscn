@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cjj4at2coxk34"]
+[gd_scene load_steps=2 format=3 uid="uid://btubrelw03nvj"]
 
-[ext_resource type="Script" uid="uid://p7xq40qtklud" path="res://audio/level_music.gd" id="1_g3ho3"]
+[ext_resource type="Script" uid="uid://p7xq40qtklud" path="res://Audio/level_music.gd" id="1_0n5tm"]
 
-[node name="LevelMusic" type="AudioStreamPlayer" unique_id=2042277290]
-script = ExtResource("1_g3ho3")
+[node name="LevelMusic" type="AudioStreamPlayer"]
+script = ExtResource("1_0n5tm")
